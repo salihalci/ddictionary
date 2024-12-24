@@ -1,0 +1,5 @@
+django-admin startproject app
+
+python manage.py runserver
+
+python manage.py startapp dictionary
