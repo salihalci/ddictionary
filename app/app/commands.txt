@@ -1,5 +1,16 @@
 django-admin startproject app
 
+python manage.py startapp dictionary
+
 python manage.py runserver
 
-python manage.py startapp dictionary
+
+
+--Create virtual env activate and deactivate commands
+
+virtualenv -p python venv
+source activate
+deactivate
+
+--install django
+python -m pip install Django 
