@@ -14,3 +14,26 @@ deactivate
 
 --install django
 python -m pip install Django 
+
+
+--migration scripts
+python .\manage.py makemigrations
+python.exe .\manage.py migrate
+
+--ipython commands
+
+CTR-D to exit
+
+
+--SQL Commands for DB
+
+--Sample insert
+    insert into dictionary_word
+    ("word_en","translation_tr")
+    values("deniz","sea")
+--Sample Select
+    select * from dictionary_word
+
+
+--create poweruser
+python.exe .\manage.py createsuperuser
