@@ -1,0 +1,14 @@
+
+{% extends "pages/base.html" %}
+
+{% block content %}
+    <h1>Save Word</h1>
+    
+    <form action="{% url 'word_save' %}" method="POST">
+        {% csrf_token %}
+        
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+
+    {% endblock %}
