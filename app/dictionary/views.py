@@ -58,3 +58,9 @@ def word_update(request, pk):
             print("Update executed.")
 
             return redirect('word_list')
+
+
+def word_delete(request, pk):
+    word = Word.objects.get(id=pk)
+    context = {'word': word}
+    return render(request, 'pages/word_delete.html', context)
