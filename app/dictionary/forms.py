@@ -3,7 +3,7 @@ from django.forms import ModelForm
 from .models import Word
 
 
-class WordSave(forms.ModelForm):
+class WordSaveUpdate(forms.ModelForm):
 
     word_en = forms.CharField(widget=forms.TextInput(
         attrs={'placeholder': 'Turkis'}))

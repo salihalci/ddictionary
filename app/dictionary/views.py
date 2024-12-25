@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Word
-from .forms import WordSave
+from .forms import WordSaveUpdate
 
 
 def index(request):
@@ -10,10 +10,10 @@ def index(request):
 def wordlist(request):
     wordList = Word.objects.all()
 
-    content = {'wordList': wordList}
+    context = {'wordList': wordList}
     for x in wordList:
         print(x)
-    return render(request, "pages/wordlist.html", content)
+    return render(request, "pages/wordlist.html", context)
 
 
 def word_save(request):
@@ -21,15 +21,40 @@ def word_save(request):
     print(request.method)
 
     if request.method == 'POST':
-        form = WordSave(request.POST)
+        form = WordSaveUpdate(request.POST)
         if form.is_valid():
             form.save()
             return redirect('success')
     else:  # yeni form oluşturup boş bir form açıyor
-        form = WordSave()
+        form = WordSaveUpdate()
         context = {'form': form}
         return render(request, "pages/word_save.html", context)
 
 
 def success(request):
     return render(request, "pages/success.html")
+
+
+def word_update(request, pk):
+    print(pk)
+    if request.method == 'GET':
+        word = Word.objects.get(id=pk)
+
+        form = WordSaveUpdate(instance=word)
+
+        print("Update form loaded.")
+        context = {'form': form}
+        return render(request, 'pages/word_update.html', context)
+
+    if request.method == 'POST':
+
+        word = Word.objects.get(id=pk)
+        print(word)
+        form = WordSaveUpdate(request.POST, instance=word)
+
+        if form.is_valid():
+
+            form.save()
+            print("Update executed.")
+
+            return redirect('word_list')
