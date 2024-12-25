@@ -61,6 +61,12 @@ def word_update(request, pk):
 
 
 def word_delete(request, pk):
-    word = Word.objects.get(id=pk)
-    context = {'word': word}
-    return render(request, 'pages/word_delete.html', context)
+    if request.method == 'GET':
+        word = Word.objects.get(id=pk)
+        context = {'word': word}
+        return render(request, 'pages/word_delete.html', context)
+
+    if request.method == 'POST':
+        word = Word.objects.get(id=pk)
+        word.delete()
+        return redirect('word_list')
