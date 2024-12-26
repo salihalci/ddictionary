@@ -38,4 +38,6 @@ CTR-D to exit
 --create poweruser
 python.exe .\manage.py createsuperuser
 
-test
+
+run on aws
+python3 manage.py runserver 0.0.0.0:8000
