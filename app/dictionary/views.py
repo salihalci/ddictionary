@@ -37,6 +37,9 @@ def success(request):
 def home(request):
     return render(request, "pages/index.html")
 
+def word_search(request):
+    return render(request, "pages/index.html")
+
 
 def word_update(request, pk):
     print(pk)
