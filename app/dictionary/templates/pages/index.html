@@ -1,12 +1,16 @@
 {% extends "pages/base.html" %}
 {% block title %} Home {% endblock %}
+{% load static %}
 {% block content %}
     <br>
     
     <div class="d-flex align-items-center justify-content-center">
         <p> Dictionary application for students!</p>
+        <br>
+        
 
    </div>
+   <img src="{% static 'images/dictionary.png' %}" class="rounded mx-auto d-block">
 
 {% endblock %}
  

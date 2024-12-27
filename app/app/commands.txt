@@ -48,6 +48,13 @@ https://www.youtube.com/watch?v=6-XXvUENY_8
 
 TODO
 [ ] add pagination to list
-[ ] add search to list
-[ ] add link to menu
+[X] add search to list
+[X] add link to menu
 [ ] need a home page and navlink icon 
+[ ] design home page
+[ ] gamification için ne yapılabilir.
+[ ] export to excel function required.
+[ ] need to chapter and time functions
+[ ] authentication
+[ ] upload image for every word tuple
+
