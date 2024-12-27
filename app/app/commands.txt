@@ -43,7 +43,11 @@ run on aws
 python3 manage.py runserver 0.0.0.0:8000
 
 
+Customize form Youtube
+https://www.youtube.com/watch?v=6-XXvUENY_8
+
 TODO
 [ ] add pagination to list
 [ ] add search to list
-[ ] add link to menu 
+[ ] add link to menu
+[ ] need a home page and navlink icon 

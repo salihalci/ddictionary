@@ -9,9 +9,9 @@
 
 {%block content%}
 
-<h1>Delete Task</h1>
+<h1>Delete Word</h1>
 
-<p>Are you sure to delete this task?  {{word}}</p>
+<p>Are you sure to delete this word?  {{word}}</p>
 
 <form method="POST" action="">
 
@@ -21,6 +21,6 @@
 
 </form>
 
-<a href="{%url 'word_list' %}">Cancel</a>
+<a href="{%url 'word_list' %}" class="btn btn-link">Cancel</a>
 
 {%endblock%}

@@ -3,12 +3,13 @@
 
 {% block content %}
     <h1>Save Word</h1>
-    
-    <form action="{% url 'word_save' %}" method="POST">
-        {% csrf_token %}
-        
-        {{ form.as_p }}
-        <button type="submit">Save</button>
-    </form>
-
+    <br>
+    <div class="form-group">
+        <form action="{% url 'word_save' %}" method="POST">
+            {% csrf_token %}
+            
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
     {% endblock %}
