@@ -34,6 +34,9 @@ def word_save(request):
 def success(request):
     return render(request, "pages/success.html")
 
+def home(request):
+    return render(request, "pages/index.html")
+
 
 def word_update(request, pk):
     print(pk)

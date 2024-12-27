@@ -1,10 +1,12 @@
 {% extends "pages/base.html" %}
-
+{% block title %} Home {% endblock %}
 {% block content %}
-    <form action="{% url 'word_save' %}" method="get">
+    <br>
+    
+    <div class="d-flex align-items-center justify-content-center">
+        <p> Dictionary application for students!</p>
 
-        <button type="submit" class="btn">Save New Record</button>
-    </form>
+   </div>
 
 {% endblock %}
  
