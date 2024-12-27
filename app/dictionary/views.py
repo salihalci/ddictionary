@@ -38,7 +38,22 @@ def home(request):
     return render(request, "pages/index.html")
 
 def word_search(request):
-    return render(request, "pages/index.html")
+    
+    context = {}         
+    
+    if request.method == "POST":
+        print (request.POST.get("search_word"))
+        wordList=Word.objects.filter(word_en__contains=request.POST.get("search_word"))
+                 
+        if wordList.exists(): #TR kolonlarda kayıt bulunduysa
+            print("TR record found!")
+        else: #EN searchte kayıt ara
+            wordList=Word.objects.filter(translation_tr__contains=request.POST.get("search_word"))
+            print("EN record found!")
+        
+        context = {'wordList': wordList}
+
+    return render(request, "pages/wordlist.html",context)
 
 
 def word_update(request, pk):
