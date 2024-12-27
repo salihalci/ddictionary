@@ -41,3 +41,9 @@ python.exe .\manage.py createsuperuser
 
 run on aws
 python3 manage.py runserver 0.0.0.0:8000
+
+
+TODO
+[ ] add pagination to list
+[ ] add search to list
+[ ] add link to menu 

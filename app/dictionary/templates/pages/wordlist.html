@@ -23,8 +23,8 @@
               <td>{{ word.word_en }}</td>
               <td>{{ word.translation_tr }}</td>
              
-              <td><a href="{% url 'word_update' word.id %}" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Update</a></td>
-              <td><a href="{% url 'word_delete' word.id %}" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Delete</a></td>
+              <td><a href="{% url 'word_update' word.id %}" class="btn btn-warning">Update</a></td>
+              <td><a href="{% url 'word_delete' word.id %}" class="btn btn-danger">Delete</a></td>
               
           </tr>
     
