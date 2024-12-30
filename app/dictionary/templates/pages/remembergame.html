@@ -1,0 +1,26 @@
+{% extends 'pages/base.html'%}
+
+{% block title %} Remember Game {% endblock %}
+
+{% block content %}
+<table class="table table-hover">
+        
+    <tr>
+        <th>ID</th>
+        <th>English</th>
+        <th>Show</th>
+        <th>Turkish</th>
+    </tr>
+    
+    {% for word in wordList %}
+        <tr>
+            <td>{{ word.pk }}</td>
+            <td>{{ word.word_en }}</td>
+            <td><a href="{% url 'word_update' word.id %}" class="btn btn-warning">Show</a></td>
+            <td>{{ word.translation_tr }}</td>
+         </tr>
+  
+    {% endfor %}
+</table>
+
+{% endblock content %}

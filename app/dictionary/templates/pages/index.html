@@ -2,6 +2,7 @@
 {% block title %} Home {% endblock %}
 {% load static %}
 {% block content %}
+<script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
     <br>
     
     <div class="d-flex align-items-center justify-content-center">
@@ -10,6 +11,12 @@
    </div>
    <br>
    <img src="{% static 'images/dictionary.png' %}" class="rounded mx-auto d-block">
-
+   <div x-data="{ open: false }">
+    <button @click="open = true">Expand</button>
+ 
+    <span x-show="open">
+        Content...
+    </span>
+</div>
 {% endblock %}
  

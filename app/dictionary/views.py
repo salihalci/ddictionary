@@ -11,8 +11,7 @@ def wordlist(request):
     wordList = Word.objects.all()
 
     context = {'wordList': wordList}
-    for x in wordList:
-        print(x)
+
     return render(request, "pages/wordlist.html", context)
 
 
@@ -34,26 +33,30 @@ def word_save(request):
 def success(request):
     return render(request, "pages/success.html")
 
+
 def home(request):
     return render(request, "pages/index.html")
 
+
 def word_search(request):
-    
-    context = {}         
-    
+
+    context = {}
+
     if request.method == "POST":
-        print (request.POST.get("search_word"))
-        wordList=Word.objects.filter(word_en__contains=request.POST.get("search_word"))
-                 
-        if wordList.exists(): #TR kolonlarda kayıt bulunduysa
+        print(request.POST.get("search_word"))
+        wordList = Word.objects.filter(
+            word_en__contains=request.POST.get("search_word"))
+
+        if wordList.exists():  # TR kolonlarda kayıt bulunduysa
             print("TR record found!")
-        else: #EN searchte kayıt ara
-            wordList=Word.objects.filter(translation_tr__contains=request.POST.get("search_word"))
+        else:  # EN searchte kayıt ara
+            wordList = Word.objects.filter(
+                translation_tr__contains=request.POST.get("search_word"))
             print("EN record found!")
-        
+
         context = {'wordList': wordList}
 
-    return render(request, "pages/wordlist.html",context)
+    return render(request, "pages/wordlist.html", context)
 
 
 def word_update(request, pk):
@@ -91,3 +94,13 @@ def word_delete(request, pk):
         word = Word.objects.get(id=pk)
         word.delete()
         return redirect('word_list')
+
+
+def remember_game(request):
+
+    # I will change this 5 records to random
+    wordList = Word.objects.all()[0:5]
+
+    context = {'wordList': wordList}
+
+    return render(request, "pages/remembergame.html", context)
