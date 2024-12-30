@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Word
 from .forms import WordSaveUpdate
+import random
 
 
 def index(request):
@@ -99,7 +100,8 @@ def word_delete(request, pk):
 def remember_game(request):
 
     # I will change this 5 records to random
-    wordList = Word.objects.all()[0:5]
+    allItems = list(Word.objects.all())
+    wordList = random.sample(allItems, 5)
 
     context = {'wordList': wordList}
 
