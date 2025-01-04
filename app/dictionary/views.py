@@ -27,6 +27,7 @@ def word_save(request):
             return redirect('success')
     else:  # yeni form oluşturup boş bir form açıyor
         form = WordSaveUpdate()
+        form_class = WordSaveUpdate
         context = {'form': form}
         return render(request, "pages/word_save.html", context)
 

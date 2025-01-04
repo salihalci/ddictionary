@@ -6,12 +6,17 @@
 {% block content %}
     <h1>Save Word</h1>
     <br>
+    
     <div class="form-group">
+     
         <form action="{% url 'word_save' %}" method="POST">
             {% csrf_token %}
             
-            {{ form.as_p }}
+            {{ form.as_table }}
             <button type="submit" class="btn btn-primary">Save</button>
         </form>
+       
+   
+    
     </div>
     {% endblock %}

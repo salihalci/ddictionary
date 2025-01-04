@@ -5,19 +5,13 @@ from .models import Word
 
 class WordSaveUpdate(forms.ModelForm):
 
-    word_en = forms.CharField(
-        label="Turkish",
-        widget=forms.TextInput(
-        attrs={'placeholder': 'Turkish word...' ,
-               'class':'form-control'}))
-    translation_tr = forms.CharField(
-        label="English",
-        widget=forms.TextInput(
-        attrs={'placeholder': 'English word...' ,
-               'class':'form-control'}))
-
     class Meta:
         model = Word
-        fields = ["word_en", "translation_tr"]
+        fields = ['word_en', 'translation_tr', ]
 
-    
+        widgets = {
+
+
+            'word_en': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'English...'}),
+            'translation_tr': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Turkish...'}),
+        }
