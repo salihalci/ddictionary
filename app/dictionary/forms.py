@@ -15,4 +15,3 @@ class WordSaveUpdate(forms.ModelForm):
             'word_en': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'English...'}),
             'translation_tr': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Turkish...'}),
         }
-        
